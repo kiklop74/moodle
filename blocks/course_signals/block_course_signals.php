@@ -132,20 +132,11 @@ class block_course_signals extends block_base {
                                                                             'width' => '40',
                                                                             'height' => '40',
                                                                             'style' => 'display: block'));
-        html_writer::empty_tag('< /br>');
 
+        $PAGE->requires->js_init_call('M.block_coursesignals.init_signal', array($result->emailPage));
+        $PAGE->requires->string_for_js('signal_message', 'block_course_signals');
 
-        $signal_message = 'Course ID: '.$result->courseId.html_writer::empty_tag('br').
-        				  'DourseTitle: '.$result->courseTitle.html_writer::empty_tag('br').
-        				  'EmailPage: '.$result->emailPage.html_writer::empty_tag('br').
-        				  'Grade: '.$result->grade.html_writer::empty_tag('br').
-        				  'Stoplight: '.$result->stoplight.html_writer::empty_tag('br').
-        				  'StudentLMSId: '.$result->studentLMSId.html_writer::empty_tag('br');
-
-        $PAGE->requires->js_init_call('YAHOO.example.container.signal_message.setBody("'.$signal_message.'")');
-
-        $this->content->text .= html_writer::tag('a', $text, array('href' => '#', 'title' => $text, 'id' => 'show_signal'));
-
+        $this->content->text .= html_writer::link('#', $text, array('title' => $text, 'id' => 'show_signal', 'onclick' => 'return false'));
         $this->content->text .= html_writer::tag('div', '', array('id' => 'container'));
 
         return $this->content;

@@ -32,9 +32,12 @@ $string['content_certificate_file'] = 'Web Service Certificate';
 $string['content_certificate_file_description'] = 'Copy the content of certificate file.';
 $string['course'] = 'Course';
 $string['choose_role'] = 'Roles selected here will determine which users are faculty members';
+$string['config_section_sourceid_empty'] = 'Section Sourceid is empty';
+$string['config_user_sourceid_empty'] = 'User Sourceid is empty';
 $string['course_group'] = 'Course group';
 $string['course_grades'] = 'Course grades.';
 $string['course_section_settings'] = 'Course section settings';
+$string['course_signals_not_working'] = 'Course Signals not working';
 $string['course_stat'] = 'Course stat.';
 $string['custom_parent_course'] = 'Custom parent course.';
 $string['delete_file'] = 'Delete file';
@@ -64,7 +67,9 @@ $string['grades_from_parent_course'] = 'Use grades from parent course.';
 $string['green_default_text'] = 'Keep up the good work!';
 $string['id_course'] = 'id';
 $string['id_user'] = 'id';
+$string['invalid_url'] = 'Invalid URL';
 $string['metacourse'] = 'Metacourse';
+$string['no_signal_user'] = 'No signal data for this user';
 $string['organizer_pages'] = 'Organizer Pages';
 $string['parent_course'] = 'Parent course.';
 $string['parent_grades'] = 'Parent grades.';
@@ -89,11 +94,13 @@ $string['signal_config_yellow_text'] = 'Link text for the yellow';
 $string['signal_config_yellow_text_description'] = 'Fill in the blank with generic text that will appear as a link to the teacher message.';
 $string['signal_config_yellow_upload'] = 'Yellow';
 $string['signal_config_yellow_upload_description'] = 'Attach a file for yellow value. This means mild warning.';
+$string['signal_message'] = 'Signal message';
 $string['signals_config'] = 'Signals configuration';
 $string['signals_config_description'] = 'Set the images and text for the signals status.';
 $string['statistics_from_parent_course'] = 'Use statistics from parent course.';
 $string['statistics_from_this_course'] = 'Use statistics from this course.';
 $string['title_grades_statistics'] = 'Where do grades and statistics come from';
+$string['webservice_error'] = 'Web service returned error';
 $string['webservice_external_url'] = 'URL of external Web Service';
 $string['webservice_external_url_description'] = 'Fill with the URL for the external web Service.';
 $string['webservice_password'] = 'Password of external Web Service';
@@ -102,22 +109,3 @@ $string['webservice_username'] = 'Username of external Web Service';
 $string['webservice_username_description'] = 'Fill with the username for the external web Service.';
 $string['yellow_default_text'] = 'Caution! You can do better in this class.';
 $string['course_signals:viewerrors'] = 'View web service errors.';
-
-
-
-$string['no_signal_user'] = 'No signal data for this user';
-$string['webservice_error'] = 'Web service returned error';
-$string['config_section_sourceid_empty'] = 'Section Sourceid is empty';
-$string['config_user_sourceid_empty'] = 'User Sourceid is empty';
-$string['invalid_url'] = 'Invalid URL';
-$string['course_signals_not_working'] = 'Course Signals not working';
-
-
-
-
-
-
-
-
-
-
