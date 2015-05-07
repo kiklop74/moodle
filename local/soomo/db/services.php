@@ -86,7 +86,7 @@ $functions = array(
 );
 
 $services = array(
-    'Soomo web service' => array (
+    get_string('wsname', 'local_soomo') => array (
         'functions'       => array(
             'local_soomo_get_version'     ,
             'local_soomo_get_user_byid'   ,

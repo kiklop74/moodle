@@ -24,3 +24,7 @@
  */
 
 $string['pluginname'] = 'Soomo integration';
+$string['wsname'] = 'Soomo Web Service';
+$string['settingstitle'] = 'Soomo integration';
+$string['heading'] = 'Some heading';
+

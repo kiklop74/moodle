@@ -25,9 +25,18 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-/** @var $ADMIN admin_root */
-global $ADMIN;
+/* @var $ADMIN admin_root */
+if ($hassiteconfig) {
+    $component = 'local_soomo';
+    $settings = new admin_settingpage($component,
+                                      new lang_string('settingstitle', $component),
+                                      'moodle/site:config');
 
-if ($ADMIN->fulltree) {
-  // TODO: add settings
+    // Add settings.
+    $settings->add(
+        new admin_setting_heading("{$component}/someheading",
+                                  new lang_string('heading', $component),
+                                  ''));
+
+    $ADMIN->add('localplugins', $settings);
 }

@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-/** @var $plugin stdClass */
-$plugin->version   = 2015040101;        // The current plugin version (Date: YYYYMMDDXX).
-$plugin->requires  = 2014050800;        // Requires this Moodle version.
+/* @var $plugin stdClass */
+$plugin->version   = 2015040102;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->requires  = 2013051400;        // Requires Moodle 2.5.
 $plugin->component = 'local_soomo';
