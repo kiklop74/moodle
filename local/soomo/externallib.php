@@ -25,6 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+/* @var $CFG stdclass */
 require_once("$CFG->libdir/externallib.php");
 
 /**
