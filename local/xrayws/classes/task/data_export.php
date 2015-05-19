@@ -37,9 +37,65 @@ class data_export extends \core\task\scheduled_task {
     }
 
     /**
+     * @param $value string
+     * @return string
+     */
+    protected function safexml($value) {
+        $result = htmlspecialchars(html_entity_decode((string)$value, ENT_QUOTES, 'UTF-8'),
+                                    ENT_NOQUOTES,
+                                    'UTF-8',
+                                    false);
+        return $result;
+    }
+
+    /**
      * Needs to be implemented
      */
     public function execute() {
         // TODO: do it
+        global $DB;
+
+        // Create output file in the temporary directory.
+        $tempdir = make_temp_directory('storeexport');
+        if (empty($tempdir)) {
+            throw new \RuntimeException("error");
+        }
+
+        $tempfile = tempnam($tempdir, uniqid('dataexport', true));
+        if ($tempfile === false) {
+            throw new \RuntimeException("some error");
+        }
+
+        $xml = new \XMLWriter();
+        $xml->setIndent(true);
+        $xml->setIndentString('  ');
+        if (!$xml->openUri($tempfile)) {
+            throw new \RuntimeException("some error");
+        }
+
+        $recs = $DB->get_recordset('context');
+        $metadata = array_keys($DB->get_columns('context'));
+        // Write the data.
+        $xml->startDocument('1.0', 'UTF-8');
+        $xml->startElement('root');
+        $counter = 0;
+        foreach ($recs as $rec) {
+            $xml->startElement('record');
+            foreach ($metadata as $column) {
+                $xml->writeElement($column, $this->safexml($rec->$column));
+            }
+            $xml->endElement(); // End record.
+            $counter++;
+            if ($counter == 1000) {
+                $xml->flush();
+                $counter = 0;
+            }
+        }
+        $xml->fullEndElement(); // End root.
+        $xml->flush();
+        unset($xml);
+
+        // Move the file to propper location.
+
     }
 }
