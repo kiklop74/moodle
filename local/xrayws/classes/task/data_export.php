@@ -92,7 +92,6 @@ class data_export extends \core\task\scheduled_task {
             }
         }
         $xml->fullEndElement(); // End root.
-        $xml->flush();
         unset($xml);
 
         // Move the file to propper location.
