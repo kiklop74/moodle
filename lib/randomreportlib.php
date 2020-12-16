@@ -62,6 +62,6 @@ class formfm extends moodleform {
         /** @var MoodleQuickForm_text $rootpath */
         $rootpath = $mform->addElement('text', 'rootpath', 'Root path');
         $mform->setType($rootpath->getName(), PARAM_PATH);
-        $this->add_action_buttons(true, 'Submit');
+        $this->add_action_buttons(false, 'Submit');
     }
 }
